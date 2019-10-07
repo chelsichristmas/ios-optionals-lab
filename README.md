@@ -10,11 +10,24 @@ a. Given the variable `userNameOne` below, print *"The username is Test User"*. 
 ```swift
 var userNameOne: String? = "Test User"
 ```
+Answer:
+```
+if let name = userNameOne {
+print("The username is \(name)")
+}
+
+```
 
 b. Given the variable `userNameTwo` below, print *"The username is undefined"*.  Use the *nil coalescing operator* (`??`).
 
 ```swift
 var userNameTwo: String? = nil
+```
+Answer:
+```
+let userNameOne: String? = nil
+let userNameTwo = userNameOne ?? "undefined"
+print("The username is \(userNameTwo)")
 ```
 
 ## Question 2
@@ -25,7 +38,10 @@ a. Given the variables `rectOneWidth` and `rectOneHeight` below, print "The area
 var rectOneWidth: Double? = 5
 var rectOneHeight: Double? = 10
 ```
+Answer:
+```
 
+```
 b. Given the variables `rectTwoWidth` and `rectTwoHeight` below, print "The are of rectTwo is not able to be calculated".  Use *Optional Binding* (`if let`) to print this message.
 
 ```swift
