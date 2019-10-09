@@ -40,6 +40,15 @@ var rectOneHeight: Double? = 10
 ```
 Answer:
 ```
+var rectOneWidth: Double? = 5
+var rectOneHeight: Double? = 10
+rectOneWidth = 5
+rectOneHeight = 10
+if let width = rectOneWidth {
+if let  height = rectOneHeight {
+    print ("The area of rectOne is \(width * height)")
+}
+}
 
 ```
 b. Given the variables `rectTwoWidth` and `rectTwoHeight` below, print "The are of rectTwo is not able to be calculated".  Use *Optional Binding* (`if let`) to print this message.
@@ -47,6 +56,21 @@ b. Given the variables `rectTwoWidth` and `rectTwoHeight` below, print "The are 
 ```swift
 var rectTwoWidth: Double? = nil
 var rectTwoHeight: Double? = nil
+
+```
+Answer:
+```
+var rectTwoWidth: Double? = nil
+var rectTwoHeight: Double? = nil
+var rectTwoArea : Double
+if let width = rectTwoWidth,
+  let height = rectTwoHeight {
+    rectTwoArea = width * height
+        print("The area is \(rectTwoArea)")
+}  else {
+    print("The area of rectTwo is not able to be calculated")
+}
+
 ```
 
 ## Question 3
@@ -59,6 +83,19 @@ var userOneName: String? = "Anne"
 var userOneAge: Int? = 15
 var userOneHeight: Double? = 70
 ```
+Answer:
+```
+var userOneName: String? = "Anne"
+var userOneAge: Int? = 15
+var userOneHeight: Double? = 70
+
+ if let name = userOneName,
+let age = userOneAge,
+    let height = userOneHeight {
+    let heightInFeet = height / 12
+    print("Hello \(name)! You are \(age) years old and \(heightInFeet).")
+}
+```
 
 b. Given the variables `userTwoName`, `userTwoAge` and `userTwoHeight` below, write code that prints "Hello user!  You are 15 years old and I don't know how tall you are".  Use optional binding
 
@@ -67,7 +104,19 @@ var userTwoName: String? = nil
 var userTwoAge: Int? = 15
 var userTwoHeight: Double? = nil
 ```
-
+Answer:
+```
+var userTwoName: String? = nil
+var userTwoAge: Int? = 15
+var userTwoHeight: Double? = nil
+ if let name = userTwoName,
+let age = userTwoAge,
+let height = userTwoHeight {
+    print("Hello \(name)! You are \(age) years old and \(height) feet tall.")
+ } else {
+    print ("Hello \(userTwoName ?? "user")! You are \(userTwoAge ?? 0) and I don't know how tall you are")
+}
+```
 
 ## Question 4
 
@@ -77,6 +126,15 @@ Give the variable `favoriteNumber`, write code that either prints "Your favorite
 
 ```swift
 var favoriteNumber = Bool.random() ? Int.random(in: 0...10) : nil
+```
+Answer:
+```
+var favoriteNumber = Bool.random() ? Int.random(in: 0...10) : nil
+if let number = favoriteNumber {
+    print("Your favorite number is \(number)")
+} else {
+    print("I don't know you're favorite number")
+}
 ```
 
 
@@ -90,6 +148,19 @@ var numOne = Bool.random() ? Int.random(in: 0...10) : nil
 var numTwo = Bool.random() ? Int.random(in: 0...10) : nil
 var numThree = Bool.random() ? Int.random(in: 0...10) : nil
 ```
+Answer:
+```
+if let numberOne = numOne,
+    let numberTwo = numTwo ,
+    let numberThree = numThree {
+    sum = (numberOne + numberTwo + numberThree)
+    if sum != 0 {
+        print("The sum of all the numbers is \(sum)")
+    }
+} else {
+    print("The sum is 0")
+}
+```
 
 ## Question 6
 
@@ -101,6 +172,10 @@ var numbers = [Int?]()
 for _ in 0..<10 {
     numbers.append(Bool.random() ? Int.random(in: 0...100) : nil)
 }
+```
+Answer:
+```
+
 ```
 
 b. Using the same variable, find the average of all non-nil values.
